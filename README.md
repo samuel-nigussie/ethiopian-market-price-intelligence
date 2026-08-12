@@ -1,113 +1,196 @@
-
-
 # 🇪🇹 Ethiopian Market Price Intelligence System
 
-A Big Data platform designed to collect, process, store, analyze, and visualize Ethiopian commodity market-price data using a modern data engineering stack.
+A Big Data platform for collecting, streaming, storing, processing, and visualizing Ethiopian commodity market-price data.
 
-This project demonstrates an end-to-end data pipeline, combining **Apache Kafka** for real-time event streaming and **Hadoop HDFS & Apache Spark** for large-scale historical data processing. Insights are served through an interactive **Streamlit** dashboard.
+The project combines **Apache Kafka**, **Hadoop HDFS**, **Apache Spark/PySpark**, and **Streamlit** to demonstrate an end-to-end Big Data pipeline.
 
-## 🎯 Project Objectives
+## 🎯 Objectives
 
-* Monitor commodity prices, inflation indicators, and trust scores across Ethiopian regions.
-* Architect a dual-pipeline system (Batch + Streaming).
-* Visualize price trends, geographic market distributions, and real-time analytics.
-* Demonstrate scalable Big Data technologies in a localized economic context.
-
-## 🏗️ System Architecture
-
-The system operates on two parallel data flows:
-
-1. **Historical Pipeline (Batch):**
-`Raw CSV` ➔ `Hadoop HDFS` ➔ `Apache Spark` ➔ `Batch Analytics`
-2. **Real-Time Pipeline (Streaming):**
-`Replay Producer` ➔ `Apache Kafka (Topic: market-prices)` ➔ `Streamlit Dashboard`
-
-## 🧰 Tech Stack
-
-* **Data Processing & Storage:** Apache Hadoop (HDFS), Apache Spark (PySpark), Pandas
-* **Real-time Streaming:** Apache Kafka
-* **Visualization:** Streamlit, Plotly
-* **Language:** Python 3.x
+* 📊 Analyze historical Ethiopian commodity prices.
+* ⚡ Simulate real-time price streaming with Kafka.
+* 💾 Store streaming data in HDFS.
+* 🔥 Process historical data using Spark.
+* 📈 Visualize market-price trends through an interactive dashboard.
 
 ---
 
-## 🚀 Quickstart Guide
+## 🏗️ Architecture
 
-### 1. Environment Setup
+### Streaming Pipeline
 
-Clone the repository and set up a Python virtual environment:
+```text
+Historical Data
+      │
+      ▼
+Replay Producer
+      │
+      ▼
+Apache Kafka
+      │
+      ├──────────────► HDFS Consumer ──► HDFS
+      │
+      └──────────────► Analytics Consumer
+                              │
+                              ▼
+                       Streamlit Dashboard
+```
+
+### Batch Pipeline
+
+```text
+Historical Data
+      │
+      ▼
+     HDFS
+      │
+      ▼
+Apache Spark
+      │
+      ▼
+Historical Analytics
+```
+
+---
+
+## 🧰 Tech Stack
+
+* **Python** — Programming language
+* **Apache Kafka** — Real-time streaming
+* **Hadoop HDFS** — Distributed storage
+* **Apache Spark / PySpark** — Big Data processing
+* **Pandas** — Data processing
+* **Streamlit** — Dashboard
+* **Plotly** — Visualization
+* **Jupyter Notebook** — Data exploration
+
+---
+
+## 📁 Project Structure
+
+```text
+ethiopian-market-price-intelligence/
+│
+├── consumers/
+│   ├── analytics_dashboard.py
+│   └── hdfs_writer.py
+├── dashboard/
+│   └── app.py
+├── producer/
+│   └── replay_producer.py
+├── spark_jobs/
+│   └── analyze_prices.py
+├── notebooks/
+│   └── ethiopia_prices_2007_2026.ipynb
+├── data/
+├── output/
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## 🚀 Quick Start
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/samuel-nigussie/ethiopian-market-price-intelligence.git
 cd ethiopian-market-price-intelligence
+```
+
+### 2. Install Dependencies
+
+```bash
 python3 -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
+source venv/bin/activate
 pip install -r requirements.txt
-
 ```
 
-### 2. Start Infrastructure (Hadoop & Kafka)
-
-Ensure your Hadoop and Kafka clusters are running locally.
+### 3. Start Hadoop
 
 ```bash
-# Start HDFS
 start-dfs.sh
-
-# Create Kafka topic
-kafka-topics.sh --create --topic market-prices --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1
-
 ```
 
-### 3. Load Historical Data
+### 4. Start Kafka
+
+Create the project topic:
 
 ```bash
-hdfs dfs -mkdir -p /user/market-data/raw
-hdfs dfs -put data/raw/market_prices.csv /user/market-data/raw/
-
+kafka-topics.sh \
+--create \
+--topic market-prices \
+--bootstrap-server localhost:9092 \
+--partitions 3 \
+--replication-factor 1
 ```
 
-### 4. Run the Pipelines
+### 5. Run the Pipeline
 
-Open separate terminal windows for the following processes (ensure the `venv` is activated in each):
-
-**Run Spark Batch Analysis:**
+Start the HDFS consumer:
 
 ```bash
-spark-submit spark/historical_analysis.py
-
+python consumers/hdfs_writer.py
 ```
 
-**Start the Kafka Producer (Simulates live market data):**
+Start the analytics consumer:
+
+```bash
+python consumers/analytics_dashboard.py
+```
+
+Start the producer:
 
 ```bash
 python producer/replay_producer.py
-
 ```
 
-**Launch the Dashboard:**
+Run Spark analysis:
+
+```bash
+spark-submit spark_jobs/analyze_prices.py
+```
+
+Launch the dashboard:
 
 ```bash
 streamlit run dashboard/app.py
-
 ```
 
 ---
 
-## 🔮 Future Roadmap
+## 📊 Key Features
 
-* **Live API Integration:** Transition from simulated replay data to a live Ethiopian market API.
-* **Machine Learning:** Implement a Spark MLlib pipeline to forecast future prices for staple commodities (Teff, Wheat, Maize).
-* **Automated Alerts:** Anomaly detection for sudden market spikes or crashes.
-* **Cloud Deployment:** Containerize with Docker and deploy to AWS/GCP.
+* Historical Ethiopian market-price analysis
+* Real-time Kafka data streaming
+* HDFS distributed storage
+* Spark batch processing
+* Interactive Streamlit dashboard
+* Market and commodity price analytics
+
+---
+
+## 🔮 Future Improvements
+
+* 🌐 Live market-price API integration
+* 🤖 Price forecasting using Machine Learning
+* 🚨 Automated price anomaly detection
+* ☁️ Docker and cloud deployment
+* 📡 Advanced real-time monitoring
+
+---
 
 ## 👥 Project Team
 
-* Amanuel Alemu Zewdu
-* Merhawit Kahsay Gidey
-* Samuel Nigussie Chanie
-* Ana Boset Wakeyo
-* Sofonias Berhane Kelet
+| Name                       |
+| -------------------------- |
+| **Amanuel Alemu Zewdu**    |
+| **Merhawit Kahsay Gidey**  |
+| **Samuel Nigussie Chanie** |
+| **Ana Boset Wakeyo**       |
+| **Sofonias Berhane Kelet** |
+
+---
 
 ## 📜 License
 
