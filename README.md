@@ -427,7 +427,7 @@ The dashboard is designed around the following layout:
 ## 1. Clone the Repository
 
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
+git clone https://github.com/samuel-nigussie/ethiopian-market-price-intelligence.git
 ```
 
 Move into the project:
@@ -466,17 +466,7 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-If you don't have a `requirements.txt` yet, the main Python packages are:
 
-```text
-kafka-python
-pandas
-streamlit
-plotly
-pyspark
-```
-
----
 
 # 📨 4. Start Kafka
 
