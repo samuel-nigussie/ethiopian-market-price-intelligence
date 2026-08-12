@@ -1,0 +1,92 @@
+region,commodity,avg_price
+Addis Ababa,livestock_goat,236.58571428571432
+Addis Ababa,livestock_sheep,178.15866666666668
+Addis Ababa,maize,254.65625
+Addis Ababa,pasta,13.02818181818182
+Addis Ababa,sorghum,5.3076923076923075
+Addis Ababa,teff_fao,499.9369230769231
+Addis Ababa,wheat,403.0
+Afar,livestock_goat,406.45904761904757
+Afar,livestock_sheep,347.1438383838385
+Afar,maize,300.56473118279564
+Afar,pasta,12.144499999999999
+Afar,sorghum,3.502688172043011
+Afar,teff_fao,469.46423529411766
+Afar,wheat,39.552696629213486
+Amhara,livestock_goat,482.43519108280265
+Amhara,livestock_sheep,409.8820234604107
+Amhara,maize,262.5787697160883
+Amhara,pasta,13.634735202492212
+Amhara,sorghum,3.489642857142857
+Amhara,teff_fao,518.8593288590604
+Amhara,wheat,169.8551155115511
+B. Gumuz,livestock_goat,642.2368627450982
+B. Gumuz,livestock_sheep,617.6797777777778
+B. Gumuz,maize,233.7629268292683
+B. Gumuz,pasta,13.728163265306124
+B. Gumuz,sorghum,2.6655999999999995
+B. Gumuz,teff_fao,515.2028888888889
+B. Gumuz,wheat,39.376744186046515
+Bichena,livestock_goat,206.05769230769232
+Bichena,livestock_sheep,161.5876923076923
+Bichena,maize,257.14153846153846
+Bichena,pasta,13.2
+Bichena,sorghum,3.69625
+Bichena,teff_fao,570.5425
+Bichena,wheat,349.632
+Dire Dawa,livestock_goat,438.9815384615385
+Dire Dawa,livestock_sheep,384.6842857142857
+Dire Dawa,maize,359.09090909090907
+Dire Dawa,pasta,11.298181818181819
+Dire Dawa,sorghum,3.6700000000000004
+Dire Dawa,teff_fao,532.76375
+Dire Dawa,wheat,3.9315384615384614
+Gambela,livestock_goat,555.7253191489363
+Gambela,livestock_sheep,536.719387755102
+Gambela,maize,244.83704545454546
+Gambela,pasta,13.078249999999997
+Gambela,sorghum,2.739545454545455
+Gambela,teff_fao,564.9641860465116
+Gambela,wheat,13.49925
+Harari,livestock_goat,465.7942857142857
+Harari,livestock_sheep,251.57583333333332
+Harari,maize,344.453
+Harari,pasta,11.115555555555554
+Harari,sorghum,4.056
+Harari,teff_fao,469.9958333333334
+Harari,wheat,2.766
+Market Average,livestock_goat,330.91083333333336
+Market Average,livestock_sheep,235.206
+Market Average,maize,278.073125
+Market Average,pasta,12.9225
+Market Average,sorghum,3.2223076923076923
+Market Average,teff_fao,484.2127272727273
+Market Average,wheat,5.019230769230769
+Oromia,livestock_goat,384.165028409091
+Oromia,livestock_sheep,317.6186094674557
+Oromia,maize,256.04127071823206
+Oromia,pasta,11.693342696629212
+Oromia,sorghum,3.2141225626740955
+Oromia,teff_fao,524.9311212121212
+Oromia,wheat,146.26617647058825
+SNNPR,livestock_goat,431.25151219512185
+SNNPR,livestock_sheep,352.8305963302753
+SNNPR,maize,260.8829047619048
+SNNPR,pasta,10.973168316831682
+SNNPR,sorghum,2.918333333333334
+SNNPR,teff_fao,500.3414925373135
+SNNPR,wheat,106.2855329949239
+Somali,livestock_goat,555.8443199999999
+Somali,livestock_sheep,437.8947540983607
+Somali,maize,241.34515873015877
+Somali,pasta,10.520983606557376
+Somali,sorghum,3.1646491228070173
+Somali,teff_fao,513.986017699115
+Somali,wheat,4.4975000000000005
+Tigray,livestock_goat,540.8562916666665
+Tigray,livestock_sheep,447.911411764706
+Tigray,maize,290.7412062256809
+Tigray,pasta,13.69857707509881
+Tigray,sorghum,3.454349593495934
+Tigray,teff_fao,513.3845701357465
+Tigray,wheat,104.13238317757009
