@@ -846,21 +846,16 @@ This would transform the project from a monitoring system into a **market intell
 
 ---
 
-# 👥 Team
+## 👥 Project Team
 
-This project was developed as a collaborative Big Data project.
+| Name                       |
+| -------------------------- |
+| **Amanuel Alemu Zewdu**    |
+| **Merhawit Kahsay Gidey**  |
+| **Samuel Nigussie Chanie** |
+| **Ana Boset Wakeyo**       |
+| **Sofonias Berhane Kelet** |
 
-### Team Members
-
-* Member 1 — Data Engineering
-* Member 2 — Kafka / Streaming
-* Member 3 — Hadoop / HDFS
-* Member 4 — Spark / Analytics
-* Member 5 — Dashboard / Visualization
-* Member 6 — Testing / Documentation
-* Member 7 — Project Integration
-
-Replace the placeholders above with the actual team members and responsibilities.
 
 ---
 
